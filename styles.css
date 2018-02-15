@@ -1,0 +1,129 @@
+/* apply a natural box layout model to all elements,
+but allowing components to change */
+
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color:rgb(0, 0, 0);
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  text-align: justify;
+
+}
+main {
+  width: 655px;
+  margin: 0 auto;
+  background: #f1f1f1;
+  padding: 50px 40px 60px 40px;
+}
+.maintext{
+  background: rgba(246, 38, 132, 0.53);
+  padding: 20px 10px;
+  color: white;
+}
+.wrapdiv{
+  display:flex;
+}
+.mainimage{
+  background-color: pink;
+  /*background-size: contain;
+  height: 300px;
+  margin:auto;
+  width:400px;*/
+}
+span{
+  margin: 0 5px;
+}
+h1 {
+  color: rgb(246, 38, 132);
+  text-transform: uppercase;
+  font-size: 3em;
+  line-height: 1.5em;
+  text-align: center;
+  margin: 0;
+}
+h2{
+  text-transform: uppercase;
+  border-bottom: solid 2px pink;
+}
+
+ul{
+  list-style: none;
+}
+ul{
+list-style-image: url("assets/heart.svg");
+}
+li{
+  font-size: 1.4em;
+}
+img{
+  height: 100%;
+width: 100%;
+}
+blockquote{
+  border: 2px solid pink;
+  padding: 10px;
+}
+
+.heart-pulse {
+  animation: pulse 2s infinite;
+  display: inline-block;
+}
+@keyframes pulse {
+  0% { /* starts small */
+    transform: scale(0.5);
+  }
+  50% { /* halfway point - gets bigger */
+    transform: scale(1);
+  }
+  100% { /* end - goes back to starting size */
+    transform: scale(0.5);
+  }
+}
+
+.heart-falling {
+  position: absolute;
+  animation: falling 6s infinite linear;
+}
+
+.heart-falling:nth-of-type(1){
+ bottom: 500px;
+ left: 50%;
+}
+.heart-falling:nth-of-type(2){
+  bottom: 500px;
+ left: 20%;
+}
+.heart-falling:nth-of-type(3){
+  bottom: 200px;
+ left:30%;
+}
+.heart-falling:nth-of-type(4){
+  bottom: 50px;
+ left: 50%;
+}
+.heart-falling:nth-of-type(5){
+  bottom: 100px;
+ left:20%;
+}
+.heart-falling:nth-of-type(6){
+  bottom: 200px;
+ left: 30%;
+}
+
+@keyframes falling {
+  0% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    bottom: -25px;
+    transform: rotate(-360deg);
+  }
+}
